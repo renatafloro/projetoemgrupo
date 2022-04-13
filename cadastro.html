@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Cdastro</title>
+    <style>
+        input{
+            display: block;
+            margin: 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: blueviolet;
+        }
+        .container{
+            position: relative;
+            
+            border: 2px solid black ;
+            width: 200px;
+            border-radius: 5px;
+            background-color: pink;
+            margin: 150px auto;
+            
+            
+            
+
+            
+        }
+        /* form{
+            margin: 0 auto;
+        } */
+        h1{
+            
+            display: block;
+            font-size: 20px;
+            
+            text-align: center;
+            height: 100%;
+        }
+        button{
+            margin: 5px;
+            padding: 5px 10px;
+            background-color: white;
+            border-radius: 5px;
+            
+        }
+        
+    </style>
+</head>
+<body>
+     <header>
+            <div class="munu-primeiro">
+                <div class="munu__log">
+                    <img src="" alt="">
+
+                </div>
+            </div>
+
+     </header>   
+
+
+
+
+    <div class="container">
+       <form>  
+        <h1>CADASTRO DE CLIENTE</h1>
+               
+        
+                <input type="text" placeholder="Nome Completo">
+                <input type="email" placeholder="Email">
+                <input type="text" placeholder="Cpf">
+                <input type="text" placeholder="Data de Nascimento">
+                <input type="text" placeholder="Senha">
+               
+
+
+
+       </form>
+       <button onclick="onSubmit()" >Salvar</button>
+       <button onclick="onSubmit()">Cancelar</button>
+    </div>
+        <script>
+
+function onSubmit() {
+    var nomeCompleto = document.getElementsByTagName("input")[0];
+    var email = document.getElementsByTagName("input")[1];
+    var cpf = document.getElementsByTagName("input")[2];
+    var data = document.getElementsByTagName("input")[3];
+    var senha = document.getElementsByTagName("input")[4];
+
+    
+    
+
+    if(nomeCompleto.value === ""){
+        alert("Informe o Nome Completo");
+        nomeCompleto.focus();
+        return;
+    }
+
+    if(email.value === ""){
+        alert("Informe o email");
+        email.focus();
+        return;
+    }
+
+    if(cpf.value === ""){
+        alert("Informe o Cpf");
+        cpf.focus();
+        return;
+    }
+    if(data.value === ""){
+        alert("Informe a Data de Nascimento");
+        data.focus();
+        return;
+    }
+    if(senha.value === ""){
+        alert("Informe a Senha");
+        senha.focus();
+        return;
+    }
+    
+
+    document.getElementsByTagName("form")[0].submit();
+    document.getElementsByTagName("form")[1].submit();
+    document.getElementsByTagName("form")[2].submit();
+    document.getElementsByTagName("form")[3].submit();
+    document.getElementsByTagName("form")[4].submit();
+
+
+
+    
+
+
+}
+
+
+        </script>
+
+</body>
+</html>
