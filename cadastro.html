@@ -9,6 +9,8 @@
     rel="stylesheet" 
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
     crossorigin="anonymous">
+
+    <script src="scripts/classes.js"></script>
     <style>
         input{
             display: block;
@@ -21,8 +23,8 @@
             position: relative;
             
             border: 2px solid black ;
-            width:250px;
-            height: 380px;
+            width:500px;
+            height: 680px;
             border-radius: 5px;
             background-color: pink;
             margin: 150px auto;            
@@ -73,77 +75,51 @@
       <!--Cadastro-->
 
     <div class="container">
-       <form>  
+       <form class="was-validated">  
         <h1>CADASTRO DE CLIENTE</h1>
                
-        
-                <input type="text" placeholder="Nome Completo">
-                <input type="email" placeholder="Email">
-                <input type="text" placeholder="Cpf">
-                <input type="text" placeholder="Data de Nascimento">
-                <input type="text" placeholder="Senha">
-               
+            <label for="nome" class="form-label">Nome</label>
+                <input class="form-control" id="nome" type="text" placeholder="Nome Completo" required>
+            <div class="invalid-feedback">Informe o nome</div>
 
+            <label for="email"  class="form-label">Email</label>
+                <input class="form-control" id="email" type="email" placeholder="Email" required>
+                <div class="invalid-feedback">Informe o email</div>
 
+            <label for="cpf" class="form-label">CPF</label>
+                <input class="form-control" type="number" id="cpf" placeholder="Cpf" required>
+                <div class="invalid-feedback">Informe o CPF</div>
 
+            <label class="form-label" for="nascimento">Data de Nascimento</label>
+                <input class="form-control" type="date" id="nascimento" placeholder="Data de Nascimento" required>
+                <div class="invalid-feedback">Informe a data de nascimento</div>
+
+            <label class="form-label" for="senha">Senha</label>
+                <input class="form-control" type="password" id="senha" placeholder="Senha" required>
+                <div class="invalid-feedback">Informe a senha</div>
        </form>
-       <button onclick="onSubmit()" >Salvar</button>
-       <button class="cancelar" onclick="onSubmit()">Cancelar</button>
+       <button onclick="submit()">Salvar</button>
+       <button onclick="cancelar()">Cancelar</button>
     </div>
         <script>
 
-function onSubmit() {
-    var nomeCompleto = document.getElementsByTagName("input")[0];
-    var email = document.getElementsByTagName("input")[1];
-    var cpf = document.getElementsByTagName("input")[2];
-    var data = document.getElementsByTagName("input")[3];
-    var senha = document.getElementsByTagName("input")[4];
+            function submit(){
+                var dadosClientes = {
+                    nome: document.getElementById("nome").value,
+                    email: document.getElementById("email").value,
+                    cpf: document.getElementById("cpf").value,
+                    nascimento: document.getElementById("nascimento").value,
+                    senha: document.getElementById("senha").value,
+                }
+                fetch("http://localhost:3000/clientes", {
+                    method: "POST",
+                    body: JSON.stringify(dadosClientes),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
 
-    
-    
-
-    if(nomeCompleto.value === ""){
-        alert("Informe o Nome Completo");
-        nomeCompleto.focus();
-        return;
-    }
-
-    if(email.value === ""){
-        alert("Informe o email");
-        email.focus();
-        return;
-    }
-
-    if(cpf.value === ""){
-        alert("Informe o Cpf");
-        cpf.focus();
-        return;
-    }
-    if(data.value === ""){
-        alert("Informe a Data de Nascimento");
-        data.focus();
-        return;
-    }
-    if(senha.value === ""){
-        alert("Informe a Senha");
-        senha.focus();
-        return;
-    }
-    
-
-    document.getElementsByTagName("form")[0].submit();
-    document.getElementsByTagName("form")[1].submit();
-    document.getElementsByTagName("form")[2].submit();
-    document.getElementsByTagName("form")[3].submit();
-    document.getElementsByTagName("form")[4].submit();
-
-
-
-    
-
-
-}
-
+                 }
 
         </script>
 

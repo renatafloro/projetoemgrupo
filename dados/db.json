@@ -1,0 +1,20 @@
+{
+  "clientes": [
+    {
+      "nome": "Pamela",
+      "email": "pamelamachado.aph@gmail.com",
+      "cpf": "39480293420",
+      "nascimento": "1999-09-09",
+      "senha": "12343556",
+      "id": 1
+    },
+    {
+      "nome": "José Marques",
+      "email": "jose@gmail.com",
+      "cpf": "30984029384",
+      "nascimento": "19978-06-19",
+      "senha": "898989",
+      "id": 2
+    }
+  ]
+}
