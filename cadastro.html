@@ -10,22 +10,33 @@
     rel="stylesheet" 
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
     crossorigin="anonymous">
+
     <style>
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        
+        color: black;
+        border: black;
+        }
+        body{
+            background-image: url(./img/newfundo.jpg);
+            background-size: cover;
+        }
         input{
             display: block;
             margin: 10px;
             padding: 5px 10px;
             border-radius: 5px;
-            color: blueviolet;
         }
         .container{
             position: relative;
-            
-            border: 2px solid black ;
+            border: 2px solid black;
             width:500px;
             height: 680px;
             border-radius: 5px;
-            background-color: pink;
+            background-color: burlywood;
             margin: 150px auto;            
         }
         /* form{
@@ -34,16 +45,21 @@
         h1{
             padding: 10px;
             display: block;
-            font-size: 20px;
-            
+            font-size: 30px;
             text-align: center;
             height: 100%;
+        }
+        .botao{
+            border-radius: 10px;
+            align-content: center;
+           
         }
         button{
             margin: 5px;
             padding: 5px 10px;
             background-color: white;
             border-radius: 5px;
+            align-content: center;
         }
         
     </style>
@@ -75,7 +91,7 @@
 
     <div class="container">
        <form class="was-validated">  
-        <h1>CADASTRO DE CLIENTE</h1>
+        <h1>Cadastre seus dados</h1>
                
             <label for="nome" class="form-label">Nome</label>
                 <input class="form-control" id="nome" type="text" placeholder="Nome Completo" required>
@@ -97,8 +113,11 @@
                 <input class="form-control" type="password" id="senha" placeholder="Senha" required>
                 <div class="invalid-feedback">Informe a senha</div>
        </form>
-       <button onclick="submit()">Salvar</button>
-       <button onclick="cancelar()">Cancelar</button>
+       <div class="botao">
+        <button onclick="submit()">Salvar</button>
+        <button onclick="cancelar()">Cancelar</button>
+       </div>
+      
     </div>
         <script>
 
