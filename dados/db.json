@@ -15,6 +15,14 @@
       "nascimento": "19978-06-19",
       "senha": "898989",
       "id": 2
+    },
+    {
+      "id": 3,
+      "nome": "Rose",
+      "email": "rose@gmail.com",
+      "cpf": "98231023809",
+      "nascimento": "1999-09-09",
+      "senha": "92890213"
     }
   ]
 }

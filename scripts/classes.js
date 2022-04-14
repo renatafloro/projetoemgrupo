@@ -8,6 +8,19 @@ class Cliente {
         this.nascimento = nascimento
         this.senha = senha
     }
+
+    salvar() {
+        fetch(urlBase,
+            {
+                method: 'POST',
+                body: JSON.stringify(this),
+                headers: {
+                        'Content-type' : 'Application/json'
+                }
+
+            })
+            .catch(erro => console.log(erro))
+    }
 }
 
 
