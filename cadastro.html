@@ -104,7 +104,16 @@
         <script>
 
             function submit(){
-                var dadosClientes = {
+                var nome = document.getElementsByTagName("input")[0].value
+                var email = document.getElementsByTagName("input")[1].value
+                var cpf = document.getElementsByTagName("input")[2].value
+                var nascimento = document.getElementsByTagName("input")[3].value
+                var senha = document.getElementsByTagName("input")[4].value
+
+                let obj = new Cliente (0, nome, email, cpf, nascimento, senha)
+                obj.salvar()
+
+               /* var dadosClientes = {
                     nome: document.getElementById("nome").value,
                     email: document.getElementById("email").value,
                     cpf: document.getElementById("cpf").value,
@@ -117,7 +126,7 @@
                     headers: {
                         'Content-Type': 'application/json'
                     }
-                })
+                })*/
 
                  }
 
