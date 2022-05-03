@@ -23,6 +23,14 @@
       "cpf": "234234234432424",
       "nascimento": "1997-12-30",
       "senha": "332432323232"
+    },
+    {
+      "id": 4,
+      "nome": "Sabrina",
+      "email": "",
+      "cpf": "",
+      "nascimento": "",
+      "senha": "89398e09qw"
     }
   ]
 }
